@@ -136,7 +136,10 @@ const ContactSection = () => {
               <p className="text-blue-100 mb-4">
                 Notre équipe d'experts vous accompagne dans la mise en place de votre automatisation.
               </p>
-              <Button className="bg-white/20 hover:bg-white/30 text-white border border-white/30">
+              <Button 
+                className="bg-white/20 hover:bg-white/30 text-white border border-white/30"
+                onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+              >
                 Réserver ma démo Calendly
               </Button>
             </div>

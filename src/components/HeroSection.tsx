@@ -24,6 +24,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all"
+              onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
             >
               Réserver une démo gratuite
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
