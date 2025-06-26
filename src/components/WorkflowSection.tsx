@@ -8,25 +8,35 @@ const WorkflowSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const steps = [{
-    icon: <FileText className="w-8 h-8 text-blue-600" />,
+    icon: <FileText className="w-6 h-6 text-white" />,
     title: "Formulaire",
-    description: "Capture automatique des leads"
+    description: "Capture automatique des leads qualifiés grâce à des formulaires intelligents et optimisés",
+    color: "from-blue-500 to-blue-600",
+    lineColor: "bg-blue-500"
   }, {
-    icon: <Brain className="w-8 h-8 text-purple-600" />,
+    icon: <Brain className="w-6 h-6 text-white" />,
     title: "Tri IA",
-    description: "Qualification intelligente"
+    description: "Qualification automatique et intelligente de vos prospects selon vos critères personnalisés",
+    color: "from-purple-500 to-purple-600",
+    lineColor: "bg-purple-500"
   }, {
-    icon: <Mail className="w-8 h-8 text-blue-600" />,
+    icon: <Mail className="w-6 h-6 text-white" />,
     title: "Email 1",
-    description: "Premier contact personnalisé"
+    description: "Premier contact personnalisé et automatisé pour engager vos prospects qualifiés",
+    color: "from-green-500 to-green-600",
+    lineColor: "bg-green-500"
   }, {
-    icon: <RefreshCw className="w-8 h-8 text-purple-600" />,
+    icon: <RefreshCw className="w-6 h-6 text-white" />,
     title: "Relances",
-    description: "Suivi automatique (3x max)"
+    description: "Suivi automatique intelligent avec maximum 3 relances personnalisées et stratégiques",
+    color: "from-orange-500 to-orange-600",
+    lineColor: "bg-orange-500"
   }, {
-    icon: <Calendar className="w-8 h-8 text-green-600" />,
+    icon: <Calendar className="w-6 h-6 text-white" />,
     title: "RDV/CRM",
-    description: "Conversion finale"
+    description: "Conversion finale avec prise de rendez-vous automatique et intégration CRM complète",
+    color: "from-indigo-500 to-indigo-600",
+    lineColor: "bg-indigo-500"
   }];
 
   const containerVariants = {
@@ -40,193 +50,175 @@ const WorkflowSection = () => {
     }
   };
 
-  const stepVariants = {
+  const cardVariants = {
     hidden: { 
       opacity: 0, 
       y: 50,
-      scale: 0.8,
-      rotateY: -20
+      x: 0
     },
-    visible: { 
+    visible: (isLeft: boolean) => ({
       opacity: 1, 
       y: 0,
-      scale: 1,
-      rotateY: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        opacity: { duration: 0.6 },
-        scale: { duration: 0.8, ease: "backOut" }
-      }
-    }
-  };
-
-  const arrowVariants = {
-    hidden: { opacity: 0, x: -20, scale: 0 },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      scale: 1,
+      x: 0,
       transition: {
         duration: 0.6,
-        delay: 0.4,
-        ease: "backOut"
-      }
-    }
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
         ease: "easeOut"
       }
+    })
+  };
+
+  const lineVariants = {
+    hidden: { 
+      scaleY: 0,
+      opacity: 0
+    },
+    visible: { 
+      scaleY: 1,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeInOut",
+        delay: 0.3
+      }
     }
   };
 
-  const resultVariants = {
+  const iconVariants = {
     hidden: { 
-      opacity: 0, 
-      y: 50, 
-      scale: 0.9 
+      scale: 0,
+      rotate: -180
     },
     visible: { 
-      opacity: 1, 
-      y: 0, 
       scale: 1,
+      rotate: 0,
       transition: {
-        duration: 1,
-        delay: 1.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.5,
+        ease: "backOut",
+        delay: 0.8
       }
     }
   };
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-white overflow-hidden">
-      <div className="container mx-auto">
+    <section ref={ref} className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <div className="container mx-auto max-w-6xl">
         <motion.div 
           className="text-center mb-16"
-          variants={titleVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: -30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Comment ça fonctionne ?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">5 étapes automatisées pour le scénario principale transformer vos visiteurs en clients</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            5 étapes automatisées pour transformer vos visiteurs en clients qualifiés
+          </p>
         </motion.div>
         
-        <div className="max-w-6xl mx-auto">
+        <div className="relative">
+          {/* Central vertical line */}
           <motion.div 
-            className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-4"
+            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-200 via-purple-200 via-green-200 via-orange-200 to-indigo-200 rounded-full"
+            style={{ height: `${(steps.length - 1) * 200 + 100}px` }}
+            variants={lineVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          />
+          
+          <motion.div 
+            className="space-y-32"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            {steps.map((step, index) => (
-              <div key={index} className="flex flex-col lg:flex-row items-center">
+            {steps.map((step, index) => {
+              const isLeft = index % 2 === 0;
+              
+              return (
                 <motion.div 
-                  className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg border border-blue-100 hover:shadow-2xl transition-all group min-w-[200px] relative"
-                  variants={stepVariants}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    y: -5,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.15)",
-                    transition: { duration: 0.3 }
-                  }}
-                  style={{
-                    transformStyle: "preserve-3d"
-                  }}
+                  key={index}
+                  className="relative flex items-center"
+                  variants={cardVariants}
+                  custom={isLeft}
                 >
+                  {/* Timeline dot with icon */}
                   <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-2xl"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <motion.div 
-                    className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md relative z-10"
+                    className={`absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg z-10 border-4 border-white`}
+                    variants={iconVariants}
                     whileHover={{ 
-                      scale: 1.2, 
-                      rotate: 360,
-                      transition: { duration: 0.6, ease: "backOut" }
+                      scale: 1.1,
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
                     }}
                   >
                     {step.icon}
                   </motion.div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900 relative z-10">{step.title}</h3>
-                  <p className="text-sm text-gray-600 relative z-10">{step.description}</p>
-                  
-                  {/* Animated number badge */}
+
+                  {/* Content card */}
                   <motion.div 
-                    className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={isInView ? { 
-                      scale: 1, 
-                      rotate: 0,
-                      transition: { 
-                        delay: 0.5 + index * 0.3,
-                        duration: 0.6,
-                        ease: "backOut"
-                      }
-                    } : {}}
+                    className={`w-5/12 ${isLeft ? 'mr-auto pr-16' : 'ml-auto pl-16'}`}
+                    whileHover={{ 
+                      scale: 1.02,
+                      y: -5
+                    }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {index + 1}
+                    <div className={`p-8 bg-white rounded-2xl shadow-lg border-l-4 ${step.lineColor} hover:shadow-xl transition-all duration-300 relative`}>
+                      {/* Step number */}
+                      <div className={`absolute -top-3 ${isLeft ? '-right-3' : '-left-3'} w-8 h-8 rounded-full bg-gradient-to-br ${step.color} text-white text-sm font-bold flex items-center justify-center shadow-md`}>
+                        {index + 1}
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {step.description}
+                      </p>
+                      
+                      {/* Decorative element */}
+                      <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${step.color} rounded-b-2xl`} />
+                    </div>
                   </motion.div>
+                  
+                  {/* Connection line to center */}
+                  <motion.div 
+                    className={`absolute top-1/2 ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'} w-8 h-0.5 ${step.lineColor}`}
+                    initial={{ scaleX: 0 }}
+                    animate={isInView ? { scaleX: 1 } : {}}
+                    transition={{
+                      duration: 0.5,
+                      delay: 1 + index * 0.2,
+                      ease: "easeOut"
+                    }}
+                    style={{ 
+                      transformOrigin: isLeft ? 'right' : 'left'
+                    }}
+                  />
                 </motion.div>
-                
-                {index < steps.length - 1 && (
-                  <motion.div
-                    variants={arrowVariants}
-                  >
-                    <ArrowRight className="w-8 h-8 text-gray-400 mt-4 lg:mt-0 lg:mx-4 hidden lg:block" />
-                  </motion.div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
           
           <motion.div 
-            className="mt-16 text-center"
-            variants={resultVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{
+              duration: 0.8,
+              delay: 2,
+              ease: "easeOut"
+            }}
           >
-            <motion.div 
-              className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 max-w-2xl mx-auto relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(34, 197, 94, 0.15)",
-                transition: { duration: 0.3 }
-              }}
-            >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-blue-400/20"
-                animate={{
-                  x: [-100, 100],
-                  opacity: [0, 0.3, 0]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatDelay: 2,
-                  delay: 2
-                }}
-              />
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Résultat :</h3>
-              <motion.p 
-                className="text-lg text-gray-700 relative z-10"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ delay: 2, duration: 0.8 }}
-              >
+            <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 max-w-2xl mx-auto relative overflow-hidden border border-green-200">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-400/10 animate-pulse" />
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                Résultat final :
+              </h3>
+              <p className="text-lg text-gray-700 relative z-10">
                 <span className="font-bold text-green-600">+300% de RDV qualifiés</span> sans effort humain supplémentaire
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
