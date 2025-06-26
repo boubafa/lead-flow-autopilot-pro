@@ -69,7 +69,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     },
     exit: {
@@ -78,7 +78,7 @@ const WorkflowSection = () => {
       scale: 0.8,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -93,7 +93,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 1.5,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
         delay: 0.2
       }
     },
@@ -102,7 +102,7 @@ const WorkflowSection = () => {
       opacity: 0,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -119,7 +119,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.68, -0.55, 0.265, 1.55],
+        ease: "backOut",
         delay: 0.3
       }
     },
@@ -129,7 +129,7 @@ const WorkflowSection = () => {
       opacity: 0,
       transition: {
         duration: 0.4,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -141,7 +141,7 @@ const WorkflowSection = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Comment ça fonctionne ?
@@ -231,7 +231,7 @@ const WorkflowSection = () => {
                     transition={{
                       duration: 0.6,
                       delay: 0.8 + index * 0.15,
-                      ease: [0.25, 0.1, 0.25, 1]
+                      ease: "easeOut"
                     }}
                     style={{ 
                       transformOrigin: isLeft ? 'right' : 'left'
@@ -249,7 +249,7 @@ const WorkflowSection = () => {
             transition={{
               duration: 0.8,
               delay: 1.5,
-              ease: [0.25, 0.1, 0.25, 1]
+              ease: "easeOut"
             }}
           >
             <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 max-w-2xl mx-auto relative overflow-hidden border border-green-200 shadow-xl">

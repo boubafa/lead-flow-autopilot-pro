@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToOffre = () => {
+    const offreSection = document.getElementById('offre');
+    if (offreSection) {
+      offreSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="pt-32 pb-20 px-6">
       <div className="container mx-auto text-center">
@@ -33,8 +40,9 @@ const HeroSection = () => {
               variant="outline" 
               size="lg" 
               className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg"
+              onClick={scrollToOffre}
             >
-              Voir le workflow
+              Voir l'offre
             </Button>
           </div>
           
