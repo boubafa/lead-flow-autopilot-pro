@@ -1,32 +1,11 @@
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, Calendar, ArrowRight } from "lucide-react";
+import { Mail, Phone, Calendar } from "lucide-react";
+import InfiniteTestimonialCarousel from "./InfiniteTestimonialCarousel";
+import GlowingButton from "./GlowingButton";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Ici vous pourriez ajouter la logique d'envoi du formulaire
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   return (
     <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white">
       <div className="container mx-auto">
@@ -39,63 +18,12 @@ const ContactSection = () => {
           </p>
         </div>
         
+        {/* Carrousel infini des témoignages */}
+        <div className="mb-16">
+          <InfiniteTestimonialCarousel />
+        </div>
+        
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Formulaire de contact */}
-          <Card className="bg-white/10 backdrop-blur-md border border-white/20">
-            <CardHeader>
-              <CardTitle className="text-2xl text-white">Parlons de votre projet</CardTitle>
-              <CardDescription className="text-blue-100">
-                Remplissez ce formulaire et nous vous recontactons sous 24h
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <Input
-                    name="name"
-                    placeholder="Votre nom"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                    required
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email professionnel"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                    required
-                  />
-                </div>
-                <Input
-                  name="company"
-                  placeholder="Nom de votre entreprise"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  required
-                />
-                <Textarea
-                  name="message"
-                  placeholder="Parlez-nous de vos besoins en automatisation..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                />
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold py-3 group"
-                >
-                  Envoyer ma demande
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-          
           {/* Informations de contact */}
           <div className="space-y-8">
             <div>
@@ -130,18 +58,21 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            
+          </div>
+          
+          {/* Section garantie */}
+          <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <h4 className="text-xl font-bold mb-4">Réponse garantie sous 24h</h4>
               <p className="text-blue-100 mb-4">
                 Notre équipe d'experts vous accompagne dans la mise en place de votre automatisation.
               </p>
-              <Button 
-                className="bg-white/20 hover:bg-white/30 text-white border border-white/30"
+              <GlowingButton
                 onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+                className="w-full"
               >
-                Réserver ma démo Calendly
-              </Button>
+                Réservez votre audit gratuitement
+              </GlowingButton>
             </div>
           </div>
         </div>

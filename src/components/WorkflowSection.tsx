@@ -1,107 +1,46 @@
 
-import { ArrowRight, FileText, Brain, Mail, RefreshCw, Calendar } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Zap, Target, Clock, BarChart3, Users, MessageSquare } from "lucide-react";
 
 const WorkflowSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const controls = useAnimation();
 
-  const steps = [{
-    icon: <FileText className="w-6 h-6 text-white" />,
-    title: "Formulaire",
-    description: "Capture automatique des leads qualifiés grâce à des formulaires intelligents et optimisés",
-    color: "from-blue-500 to-blue-600",
-    lineColor: "bg-blue-500"
-  }, {
-    icon: <Brain className="w-6 h-6 text-white" />,
-    title: "Tri IA",
-    description: "Qualification automatique et intelligente de vos prospects selon vos critères personnalisés",
-    color: "from-purple-500 to-purple-600",
-    lineColor: "bg-purple-500"
-  }, {
-    icon: <Mail className="w-6 h-6 text-white" />,
-    title: "Email 1",
-    description: "Premier contact personnalisé et automatisé pour engager vos prospects qualifiés",
-    color: "from-green-500 to-green-600",
-    lineColor: "bg-green-500"
-  }, {
-    icon: <RefreshCw className="w-6 h-6 text-white" />,
-    title: "Relances",
-    description: "Suivi automatique intelligent avec maximum 3 relances personnalisées et stratégiques",
-    color: "from-orange-500 to-orange-600",
-    lineColor: "bg-orange-500"
-  }, {
-    icon: <Calendar className="w-6 h-6 text-white" />,
-    title: "RDV/CRM",
-    description: "Conversion finale avec prise de rendez-vous automatique et intégration CRM complète",
-    color: "from-indigo-500 to-indigo-600",
-    lineColor: "bg-indigo-500"
-  }];
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1
+        duration: 0.6,
+        staggerChildren: 0.2
       }
     }
   };
 
-  const cardVariants = {
+  const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 80,
+      y: 30,
       scale: 0.8
     },
-    visible: {
+    visible: { 
       opacity: 1, 
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    },
-    exit: {
-      opacity: 0,
-      y: -80,
-      scale: 0.8,
-      transition: {
+      transition: { 
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const timelineVariants = {
-    hidden: { 
-      scaleY: 0,
-      opacity: 0
-    },
-    visible: { 
-      scaleY: 1,
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-        delay: 0.2
-      }
-    },
-    exit: {
-      scaleY: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.8,
         ease: "easeOut"
       }
     }
@@ -111,169 +50,136 @@ const WorkflowSection = () => {
     hidden: { 
       scale: 0,
       rotate: -180,
-      opacity: 0
+      opacity: 0 
     },
     visible: { 
       scale: 1,
       rotate: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
+      transition: { 
+        duration: 0.8,
         ease: "backOut",
         delay: 0.3
-      }
-    },
-    exit: {
-      scale: 0,
-      rotate: 180,
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
       }
     }
   };
 
+  const steps = [
+    {
+      icon: Target,
+      title: "Capture automatique",
+      description: "Vos formulaires se connectent instantanément à notre système. Chaque nouveau lead est capturé automatiquement.",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: BarChart3,
+      title: "Tri et enrichissement",
+      description: "Les leads sont automatiquement triés, qualifiés et enrichis avec les bonnes informations dans votre CRM.",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: MessageSquare,
+      title: "Messages personnalisés",
+      description: "Chaque lead reçoit instantanément un message de bienvenue personnalisé avec un lien de prise de rendez-vous.",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Clock,
+      title: "Relances intelligentes",
+      description: "Si le lead ne prend pas rendez-vous, notre système envoie des relances automatiques à J+3, J+6, et J+9.",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: Users,
+      title: "Notification équipe",
+      description: "Votre équipe commerciale est notifiée en temps réel des leads chauds prêts à être contactés.",
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      icon: Zap,
+      title: "Suivi en temps réel",
+      description: "Dashboard complet pour suivre tous vos leads, leur statut et les actions automatisées effectuées.",
+      color: "from-yellow-500 to-orange-500"
+    }
+  ];
+
   return (
-    <section ref={ref} className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div 
+    <section className="py-20 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
+      <div className="container mx-auto" ref={ref}>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
           className="text-center mb-16"
-          initial={{ opacity: 0, y: -30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Comment ça fonctionne ?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            5 étapes automatisées pour transformer vos visiteurs en clients qualifiés
-          </p>
+          <motion.h2 
+            variants={itemVariants}
+            className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+          >
+            Comment ça marche ? <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">En 6 étapes automatisées</span>
+          </motion.h2>
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+          >
+            Notre système intelligent transforme vos visiteurs en clients qualifiés, 24h/24 et 7j/7, sans intervention manuelle
+          </motion.p>
         </motion.div>
         
-        <div className="relative">
-          {/* Timeline continue - ligne verticale centrale continue */}
-          <motion.div 
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-200 via-purple-200 via-green-200 via-orange-200 to-indigo-200 rounded-full shadow-lg"
-            style={{ 
-              height: `${steps.length * 240}px`,
-              top: '0px'
-            }}
-            variants={timelineVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "exit"}
-          />
-          
-          <motion.div 
-            className="space-y-32"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "exit"}
-          >
-            {steps.map((step, index) => {
-              const isLeft = index % 2 === 0;
-              
-              return (
-                <motion.div 
-                  key={index}
-                  className="relative flex items-center"
-                  variants={cardVariants}
-                  style={{ zIndex: 10 }}
-                >
-                  {/* Timeline dot avec icône */}
-                  <motion.div 
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-xl z-20 border-4 border-white`}
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+        >
+          {steps.map((step, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <Card className="h-full bg-white/80 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <CardHeader className="text-center pb-4">
+                  <motion.div
                     variants={iconVariants}
-                    whileHover={{ 
-                      scale: 1.15,
-                      boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                      transition: { duration: 0.2 }
-                    }}
+                    className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
                   >
-                    {step.icon}
+                    <step.icon className="w-8 h-8 text-white" />
                   </motion.div>
-
-                  {/* Carte de contenu */}
-                  <motion.div 
-                    className={`w-5/12 ${isLeft ? 'mr-auto pr-16' : 'ml-auto pl-16'}`}
-                    whileHover={{ 
-                      scale: 1.03,
-                      y: -8,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    <div className={`p-8 bg-white rounded-2xl shadow-xl border-l-4 ${step.lineColor} hover:shadow-2xl transition-all duration-500 relative overflow-hidden`}>
-                      {/* Numéro d'étape */}
-                      <div className={`absolute -top-3 ${isLeft ? '-right-3' : '-left-3'} w-8 h-8 rounded-full bg-gradient-to-br ${step.color} text-white text-sm font-bold flex items-center justify-center shadow-lg`}>
-                        {index + 1}
-                      </div>
-                      
-                      <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {step.description}
-                      </p>
-                      
-                      {/* Élément décoratif */}
-                      <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${step.color} rounded-b-2xl`} />
-                      
-                      {/* Effet brillant au hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-10 transition-opacity duration-500 transform -skew-x-12" />
-                    </div>
-                  </motion.div>
-                  
-                  {/* Ligne de connexion vers le centre */}
-                  <motion.div 
-                    className={`absolute top-1/2 ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'} w-8 h-0.5 ${step.lineColor} z-10`}
-                    initial={{ scaleX: 0 }}
-                    animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.8 + index * 0.15,
-                      ease: "easeOut"
-                    }}
-                    style={{ 
-                      transformOrigin: isLeft ? 'right' : 'left'
-                    }}
-                  />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-          
-          <motion.div 
-            className="mt-20 text-center"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-            transition={{
-              duration: 0.8,
-              delay: 1.5,
-              ease: "easeOut"
-            }}
-          >
-            <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 max-w-2xl mx-auto relative overflow-hidden border border-green-200 shadow-xl">
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-400/10"
-                animate={{ 
-                  opacity: [0.5, 1, 0.5],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
-                Résultat final :
-              </h3>
-              <p className="text-lg text-gray-700 relative z-10">
-                <span className="font-bold text-green-600">+300% de RDV qualifiés</span> sans effort humain supplémentaire
-              </p>
-            </div>
-          </motion.div>
-        </div>
+                  <CardTitle className="text-xl font-bold text-gray-900">
+                    Étape {index + 1}: {step.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-gray-600 leading-relaxed text-center">
+                    {step.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={itemVariants}
+          className="text-center mt-16"
+        >
+          <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-200 shadow-lg">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              ⚡ Résultat : Zéro lead perdu, conversion maximisée
+            </h3>
+            <p className="text-lg text-gray-700 mb-6">
+              Pendant que vous dormez, notre IA travaille pour vous. Vos prospects sont pris en charge instantanément, 
+              relancés intelligemment, et convertis en clients payants.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all"
+              onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+            >
+              Voir notre système en action
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

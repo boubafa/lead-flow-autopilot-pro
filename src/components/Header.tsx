@@ -13,11 +13,12 @@ const Header = () => {
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#solution" className="text-gray-600 hover:text-blue-600 transition-colors">Solution</a>
-          <a href="#tarifs" className="text-gray-600 hover:text-blue-600 transition-colors">Tarifs</a>
+          <a href="#offre" className="text-gray-600 hover:text-blue-600 transition-colors">Offre</a>
+          <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">À propos</a>
           <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
         </nav>
         <Button 
-          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 shadow-[0_0_20px_rgba(59,130,246,0.3)] animate-pulse"
           onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
         >
           Réserver un audit gratuit

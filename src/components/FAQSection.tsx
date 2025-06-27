@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const FAQSection = () => {
   const faqs = [
@@ -34,21 +34,23 @@ const FAQSection = () => {
           </h2>
         </div>
         
-        <div className="max-w-4xl mx-auto space-y-6">
-          {faqs.map((faq, index) => (
-            <Card key={index} className="bg-white/80 backdrop-blur-sm border border-blue-100 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg text-gray-900 font-bold">
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-lg px-6 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-lg text-gray-900 font-bold hover:no-underline py-6">
                   {faq.question}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 leading-relaxed pb-6">
                   {faq.answer}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
