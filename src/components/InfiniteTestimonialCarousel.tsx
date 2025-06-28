@@ -25,7 +25,7 @@ const InfiniteTestimonialCarousel = () => {
 
   return (
     <div className="overflow-hidden">
-      <div className="flex animate-[scroll_20s_linear_infinite] space-x-8">
+      <div className="flex animate-scroll space-x-8">
         {duplicatedTestimonials.map((testimonial, index) => (
           <div key={index} className="flex-shrink-0 w-80 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex justify-center mb-4">
@@ -43,16 +43,21 @@ const InfiniteTestimonialCarousel = () => {
           </div>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          100% {
-            transform: translateX(-50%);
+          .animate-scroll {
+            animation: scroll 20s linear infinite;
           }
-        }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

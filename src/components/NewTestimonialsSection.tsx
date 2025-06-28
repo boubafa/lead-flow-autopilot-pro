@@ -34,7 +34,7 @@ const NewTestimonialsSection = () => {
         
         {/* Carrousel infini */}
         <div className="overflow-hidden">
-          <div className="flex animate-[scroll_30s_linear_infinite] space-x-8">
+          <div className="flex animate-scroll-testimonials space-x-8">
             {infiniteTestimonials.map((testimonial, index) => (
               <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition-all duration-300">
                 <div className="flex justify-center mb-6">
@@ -54,16 +54,21 @@ const NewTestimonialsSection = () => {
           </div>
         </div>
 
-        <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
+        <style>
+          {`
+            @keyframes scroll-testimonials {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-33.333%);
+              }
             }
-            100% {
-              transform: translateX(-33.333%);
+            .animate-scroll-testimonials {
+              animation: scroll-testimonials 30s linear infinite;
             }
-          }
-        `}</style>
+          `}
+        </style>
       </div>
     </section>
   );
