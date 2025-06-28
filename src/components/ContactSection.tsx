@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, Calendar } from "lucide-react";
 import InfiniteTestimonialCarousel from "./InfiniteTestimonialCarousel";
 import GlowingButton from "./GlowingButton";
-
 const ContactSection = () => {
-  return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white">
+  return <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -63,22 +60,15 @@ const ContactSection = () => {
           {/* Section garantie */}
           <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h4 className="text-xl font-bold mb-4">Réponse garantie sous 24h</h4>
-              <p className="text-blue-100 mb-4">
-                Notre équipe d'experts vous accompagne dans la mise en place de votre automatisation.
-              </p>
-              <GlowingButton
-                onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
-                className="w-full"
-              >
+              <h4 className="text-xl font-bold mb-4">Réponse garantie sous 48h</h4>
+              <p className="text-blue-100 mb-4">Nous  vous accompagnons dans la mise en place de votre automatisation.</p>
+              <GlowingButton onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="w-full">
                 Réservez votre audit gratuitement
               </GlowingButton>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
