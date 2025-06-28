@@ -41,7 +41,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: { 
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.1, 0.25, 1]
       }
     }
   };
@@ -58,7 +58,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "backOut",
+        ease: [0.68, -0.55, 0.265, 1.55],
         delay: 0.3
       }
     }
@@ -104,7 +104,7 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
+    <section id="workflow" className="py-20 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
       <div className="container mx-auto" ref={ref}>
         <motion.div
           initial="hidden"
@@ -126,35 +126,51 @@ const WorkflowSection = () => {
           </motion.p>
         </motion.div>
         
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-        >
-          {steps.map((step, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-white/80 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                <CardHeader className="text-center pb-4">
-                  <motion.div
-                    variants={iconVariants}
-                    className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                  >
-                    <step.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-                  <CardTitle className="text-xl font-bold text-gray-900">
-                    Étape {index + 1}: {step.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-gray-600 leading-relaxed text-center">
-                    {step.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Layout vertical avec ligne centrale */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Ligne verticale centrale */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-blue-400 transform -translate-x-1/2 hidden lg:block"></div>
+          
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={containerVariants}
+            className="space-y-12 lg:space-y-16"
+          >
+            {steps.map((step, index) => (
+              <motion.div 
+                key={index} 
+                variants={itemVariants}
+                className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col lg:gap-12 gap-6`}
+              >
+                {/* Carte */}
+                <div className="lg:w-1/2 w-full">
+                  <Card className="bg-white/80 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                    <CardHeader className="text-center pb-4">
+                      <motion.div
+                        variants={iconVariants}
+                        className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                      >
+                        <step.icon className="w-8 h-8 text-white animate-pulse" />
+                      </motion.div>
+                      <CardTitle className="text-xl font-bold text-gray-900">
+                        Étape {index + 1}: {step.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-gray-600 leading-relaxed text-center">
+                        {step.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                {/* Espaceur pour l'autre côté */}
+                <div className="lg:w-1/2 w-full hidden lg:block"></div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
         
         <motion.div
           initial="hidden"

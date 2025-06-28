@@ -20,6 +20,9 @@ const NewTestimonialsSection = () => {
     }
   ];
 
+  // Triple les témoignages pour un effet de scroll infini fluide
+  const infiniteTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-yellow-50 to-orange-50">
       <div className="container mx-auto">
@@ -29,24 +32,38 @@ const NewTestimonialsSection = () => {
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition-all duration-300">
-              <div className="flex justify-center mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+        {/* Carrousel infini */}
+        <div className="overflow-hidden">
+          <div className="flex animate-[scroll_30s_linear_infinite] space-x-8">
+            {infiniteTestimonials.map((testimonial, index) => (
+              <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition-all duration-300">
+                <div className="flex justify-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="text-gray-700 mb-6 leading-relaxed">
+                  "🌟 {testimonial.text}"
+                </blockquote>
+                <div className="text-center">
+                  <div className="font-bold text-gray-900">— {testimonial.author}</div>
+                  <div className="text-gray-600 text-sm">{testimonial.role}</div>
+                </div>
               </div>
-              <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                "🌟 {testimonial.text}"
-              </blockquote>
-              <div className="text-center">
-                <div className="font-bold text-gray-900">— {testimonial.author}</div>
-                <div className="text-gray-600 text-sm">{testimonial.role}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        <style jsx>{`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-33.333%);
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
