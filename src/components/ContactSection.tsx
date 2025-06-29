@@ -61,7 +61,7 @@ const ContactSection = () => {
           <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <h4 className="text-xl font-bold mb-4">Réponse garantie sous 48h</h4>
-              <p className="text-blue-100 mb-4">Nous vous accompagne dans la mise en place de votre automatisation.</p>
+              <p className="text-blue-100 mb-4">Nous vous accompagnons dans la mise en place de votre automatisation.</p>
               <GlowingButton onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="w-full">
                 Réservez votre audit gratuitement
               </GlowingButton>
