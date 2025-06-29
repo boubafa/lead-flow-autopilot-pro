@@ -124,6 +124,117 @@
   }
 }
 
+/* Nouvelles animations SVG spectaculaires */
+@keyframes orbit-dance {
+  0% { 
+    transform: rotate(0deg) translateX(20px) rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: rotate(90deg) translateX(25px) rotate(-90deg) scale(1.1);
+  }
+  50% { 
+    transform: rotate(180deg) translateX(30px) rotate(-180deg) scale(1.2);
+  }
+  75% { 
+    transform: rotate(270deg) translateX(25px) rotate(-270deg) scale(1.1);
+  }
+  100% { 
+    transform: rotate(360deg) translateX(20px) rotate(-360deg) scale(1);
+  }
+}
+
+@keyframes wave-motion {
+  0%, 100% { 
+    transform: translateY(0px) rotateZ(0deg) scale(1);
+  }
+  25% { 
+    transform: translateY(-15px) rotateZ(5deg) scale(1.05);
+  }
+  50% { 
+    transform: translateY(-25px) rotateZ(-3deg) scale(1.1);
+  }
+  75% { 
+    transform: translateY(-10px) rotateZ(8deg) scale(1.05);
+  }
+}
+
+@keyframes elastic-bounce {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+  }
+  10% { 
+    transform: scale(1.1) rotate(-10deg);
+  }
+  20% { 
+    transform: scale(1.2) rotate(5deg);
+  }
+  30% { 
+    transform: scale(1.15) rotate(-5deg);
+  }
+  40% { 
+    transform: scale(1.25) rotate(8deg);
+  }
+  50% { 
+    transform: scale(1.3) rotate(-3deg);
+  }
+  60% { 
+    transform: scale(1.2) rotate(4deg);
+  }
+  70% { 
+    transform: scale(1.1) rotate(-2deg);
+  }
+  80% { 
+    transform: scale(1.05) rotate(1deg);
+  }
+  90% { 
+    transform: scale(1.02) rotate(-1deg);
+  }
+}
+
+@keyframes magnetic-pull {
+  0%, 100% { 
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  16% { 
+    transform: translateX(8px) translateY(-5px) rotate(15deg) scale(1.05);
+  }
+  33% { 
+    transform: translateX(-12px) translateY(8px) rotate(-20deg) scale(1.1);
+  }
+  50% { 
+    transform: translateX(15px) translateY(-12px) rotate(25deg) scale(1.15);
+  }
+  66% { 
+    transform: translateX(-10px) translateY(15px) rotate(-15deg) scale(1.1);
+  }
+  83% { 
+    transform: translateX(5px) translateY(-8px) rotate(10deg) scale(1.05);
+  }
+}
+
+@keyframes spiral-glow {
+  0% { 
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.7));
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.2);
+    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.9));
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.7));
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+  }
+}
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
@@ -135,6 +246,27 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Classes pour les nouvelles animations SVG */
+.svg-orbit-dance {
+  animation: orbit-dance 8s linear infinite;
+}
+
+.svg-wave-motion {
+  animation: wave-motion 4s ease-in-out infinite;
+}
+
+.svg-elastic-bounce {
+  animation: elastic-bounce 3s ease-in-out infinite;
+}
+
+.svg-magnetic-pull {
+  animation: magnetic-pull 5s ease-in-out infinite;
+}
+
+.svg-spiral-glow {
+  animation: spiral-glow 4s linear infinite;
 }
 
 /* Button hover effects */
