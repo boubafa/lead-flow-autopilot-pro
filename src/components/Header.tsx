@@ -1,5 +1,5 @@
 
-import { Button } from "@/components/ui/button";
+import AnimatedLightButton from "./AnimatedLightButton";
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -26,13 +26,12 @@ const Header = () => {
           <button onClick={() => scrollToSection('apropos')} className="text-gray-600 hover:text-blue-600 transition-all duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">À propos</button>
           <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-all duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">Contact</button>
         </nav>
-        <Button 
-          className="relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 transform transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 overflow-hidden"
+        <AnimatedLightButton 
           onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+          className="px-6"
         >
-          <span className="relative z-10">Réserver un audit gratuit</span>
-          <div className="absolute inset-0 bg-white opacity-0 hover:opacity-10 transition-opacity duration-200"></div>
-        </Button>
+          Réserver un audit gratuit
+        </AnimatedLightButton>
       </div>
     </header>
   );

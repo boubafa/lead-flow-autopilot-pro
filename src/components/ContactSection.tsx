@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Calendar } from "lucide-react";
 import InfiniteTestimonialCarousel from "./InfiniteTestimonialCarousel";
-import GlowingButton from "./GlowingButton";
+import AnimatedLightButton from "./AnimatedLightButton";
 
 const ContactSection = () => {
   return (
@@ -56,9 +56,12 @@ const ContactSection = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-105">
               <h4 className="text-xl font-bold mb-4">Réponse garantie sous 48h</h4>
               <p className="text-blue-100 mb-4">Nous vous accompagnons dans la mise en place de votre automatisation.</p>
-              <GlowingButton onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="w-full">
+              <AnimatedLightButton 
+                onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} 
+                className="w-full"
+              >
                 Réservez votre audit gratuitement
-              </GlowingButton>
+              </AnimatedLightButton>
             </div>
           </div>
         </div>

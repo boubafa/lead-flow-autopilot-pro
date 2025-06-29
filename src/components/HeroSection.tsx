@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target } from "lucide-react";
+import AnimatedLightButton from "./AnimatedLightButton";
 
 const HeroSection = () => {
   const scrollToOffre = () => {
@@ -84,17 +84,16 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button 
+              <AnimatedLightButton 
                 size="lg" 
-                className="relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden" 
                 onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+                className="px-8 py-4 text-lg"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="flex items-center">
                   Réserver une démo gratuite
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </Button>
+              </AnimatedLightButton>
               <Button 
                 variant="outline" 
                 size="lg" 
