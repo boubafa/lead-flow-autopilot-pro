@@ -27,7 +27,7 @@ const Header = () => {
           <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-all duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">Contact</button>
         </nav>
         <Button 
-          className="relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 transform transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 overflow-hidden"
+          className="relative btn-led-border btn-led-flash bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 transform transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 overflow-hidden"
           onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
         >
           <span className="relative z-10">Réserver un audit gratuit</span>

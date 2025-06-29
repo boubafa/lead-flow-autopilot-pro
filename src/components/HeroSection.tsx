@@ -86,7 +86,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button 
                 size="lg" 
-                className="relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden" 
+                className="relative btn-led-border btn-led-flash bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden" 
                 onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
               >
                 <span className="relative z-10 flex items-center">
@@ -98,7 +98,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95" 
+                className="btn-led-border border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95" 
                 onClick={scrollToOffre}
               >
                 Voir l'offre
