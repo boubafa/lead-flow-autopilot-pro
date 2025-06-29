@@ -32,7 +32,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-blue-100">contact@autoconvertpro.com</div>
+                    <div className="text-blue-100">contact@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
