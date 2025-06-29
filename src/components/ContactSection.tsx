@@ -35,15 +35,7 @@ const ContactSection = () => {
                     <div className="text-blue-100">fallboubacar514@gmail.com</div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-purple-300" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Téléphone</div>
-                    <div className="text-blue-100">+33 1 23 45 67 89</div>
-                  </div>
-                </div>
+                
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
                     <Calendar className="w-6 h-6 text-green-300" />
