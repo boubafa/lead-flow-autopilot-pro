@@ -32,7 +32,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-blue-100">fallboubacar@gmail.com</div>
+                    <div className="text-blue-100">fallboubacar514@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
