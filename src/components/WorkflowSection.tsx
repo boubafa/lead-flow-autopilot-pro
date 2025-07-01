@@ -41,7 +41,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: { 
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -58,7 +58,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "backOut",
+        ease: [0.68, -0.55, 0.265, 1.55],
         delay: 0.3
       }
     }
@@ -116,7 +116,7 @@ const WorkflowSection = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
           >
-            Comment ça marche ? <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">En 6 étapes automatisées</span>
+            Je vous présente Lead Booster Auto Pilot, la solution à ce problème. Comment ça marche ? <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">En 6 étapes automatisées</span>
           </motion.h2>
           <motion.p 
             variants={itemVariants}
