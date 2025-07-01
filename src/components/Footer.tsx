@@ -1,7 +1,5 @@
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white py-12 px-6">
+  return <footer className="bg-gray-900 text-white py-12 px-6">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -9,7 +7,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
-              <span className="text-xl font-bold">AutoConvert Pro</span>
+              <span className="text-xl font-bold">Lead Booster Auto Pilot</span>
             </div>
             <p className="text-gray-400 mb-4">
               L'automatisation intelligente pour votre prospection B2B
@@ -61,8 +59,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
