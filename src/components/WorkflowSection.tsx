@@ -9,7 +9,7 @@ import { ArrowRight, Zap, Target, Clock, BarChart3, Users, MessageSquare } from 
 
 const WorkflowSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -23,8 +23,8 @@ const WorkflowSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
+        duration: 0.3,
+        staggerChildren: 0.1
       }
     }
   };
@@ -32,16 +32,16 @@ const WorkflowSection = () => {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30,
-      scale: 0.8
+      y: 20,
+      scale: 0.95
     },
     visible: { 
       opacity: 1, 
       y: 0,
       scale: 1,
       transition: { 
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.4,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -49,7 +49,7 @@ const WorkflowSection = () => {
   const iconVariants = {
     hidden: { 
       scale: 0,
-      rotate: -180,
+      rotate: -90,
       opacity: 0 
     },
     visible: { 
@@ -57,9 +57,9 @@ const WorkflowSection = () => {
       rotate: 0,
       opacity: 1,
       transition: { 
-        duration: 0.8,
-        ease: "backOut",
-        delay: 0.3
+        duration: 0.5,
+        ease: [0.68, -0.55, 0.265, 1.55],
+        delay: 0.2
       }
     }
   };
@@ -104,61 +104,61 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section id="workflow" className="py-20 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
+    <section id="workflow" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
       <div className="container mx-auto" ref={ref}>
         <motion.div
           initial="hidden"
           animate={controls}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900 px-4"
           >
             Je vous présente <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Lead Booster Auto Pilot</span>, la solution à ce problème. Comment ça marche ? <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">En 6 étapes automatisées</span>
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4"
           >
             Notre système intelligent transforme vos visiteurs en clients qualifiés, 24h/24 et 7j/7, sans intervention manuelle
           </motion.p>
         </motion.div>
         
-        {/* Layout vertical avec ligne centrale */}
+        {/* Layout responsive avec ligne centrale */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Ligne verticale centrale */}
+          {/* Ligne verticale centrale - masquée sur mobile */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-blue-400 transform -translate-x-1/2 hidden lg:block"></div>
           
           <motion.div
             initial="hidden"
             animate={controls}
             variants={containerVariants}
-            className="space-y-12 lg:space-y-16"
+            className="space-y-8 md:space-y-12 lg:space-y-16"
           >
             {steps.map((step, index) => (
               <motion.div 
                 key={index} 
                 variants={itemVariants}
-                className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col lg:gap-12 gap-6`}
+                className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col lg:gap-12 gap-4 md:gap-6`}
               >
-                {/* Carte */}
-                <div className="lg:w-1/2 w-full">
-                  <Card className="bg-white/80 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                    <CardHeader className="text-center pb-4">
+                {/* Carte responsive */}
+                <div className="lg:w-1/2 w-full max-w-md lg:max-w-none">
+                  <Card className="bg-white/90 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <CardHeader className="text-center pb-4 px-4 md:px-6">
                       <motion.div
                         variants={iconVariants}
-                        className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                        className={`w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
                       >
-                        <step.icon className="w-8 h-8 text-white animate-pulse" />
+                        <step.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </motion.div>
-                      <CardTitle className="text-xl font-bold text-gray-900">
+                      <CardTitle className="text-lg md:text-xl font-bold text-gray-900">
                         Étape {index + 1}: {step.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="pt-0">
-                      <p className="text-gray-600 leading-relaxed text-center">
+                    <CardContent className="pt-0 px-4 md:px-6">
+                      <p className="text-gray-600 leading-relaxed text-center text-sm md:text-base">
                         {step.description}
                       </p>
                     </CardContent>
@@ -176,23 +176,23 @@ const WorkflowSection = () => {
           initial="hidden"
           animate={controls}
           variants={itemVariants}
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-200 shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
+          <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto border border-blue-200 shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">
               ⚡ Résultat : Zéro lead perdu, conversion maximisée
             </h3>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-base md:text-lg text-gray-700 mb-6">
               Pendant que vous dormez, notre IA travaille pour vous. Vos prospects sont pris en charge instantanément, 
               relancés intelligemment, et convertis en clients payants.
             </p>
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold group shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
               onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
             >
               Voir notre système en action
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </motion.div>
