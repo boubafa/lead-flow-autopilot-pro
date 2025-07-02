@@ -1,11 +1,10 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const FAQSection = () => {
   const faqs = [
     {
       question: "💬 Combien de temps prend l'installation du système ?",
-      answer: "En général entre 3 et 7 jours, selon votre organisation actuelle et vos outils."
+      answer: "En général entre 7 et 10 jours, selon votre organisation actuelle et vos outils."
     },
     {
       question: "💬 Dois-je déjà utiliser un CRM ou des formulaires ?",
