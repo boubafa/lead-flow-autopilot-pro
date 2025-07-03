@@ -19,6 +19,7 @@ const MobileMenu = () => {
 
   const menuItems = [
     { id: 'workflow', label: 'Solution' },
+    { id: 'systeme', label: 'Système' },
     { id: 'apropos', label: 'À propos' },
     { id: 'contact', label: 'Contact' }
   ];
