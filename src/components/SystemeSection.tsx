@@ -69,9 +69,7 @@ const SystemeSection = () => {
               </span>
             </AnimatedLightButton>
             
-            <p className="text-sm text-gray-500 mt-4">
-              ⚡ Réponse garantie sous 24h • 🎯 Sans engagement
-            </p>
+            <p className="text-sm text-gray-500 mt-4">⚡ Réponse garantie sous 48h • 🎯 Sans engagement</p>
           </div>
         </div>
       </div>
