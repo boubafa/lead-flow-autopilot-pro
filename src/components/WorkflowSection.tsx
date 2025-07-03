@@ -1,22 +1,16 @@
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Zap, Target, Clock, BarChart3, Users, MessageSquare } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const WorkflowSection = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [controls, isInView]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,8 +35,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: { 
         duration: 0.6,
-        type: "spring",
-        damping: 20
+        ease: "easeOut"
       }
     }
   };
@@ -59,8 +52,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        type: "spring",
-        damping: 15,
+        ease: "easeOut",
         delay: 0.3
       }
     }
@@ -110,7 +102,7 @@ const WorkflowSection = () => {
       <div className="container mx-auto" ref={ref}>
         <motion.div
           initial="hidden"
-          animate={controls}
+          animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
           className="text-center mb-12 md:mb-16"
         >
@@ -135,7 +127,7 @@ const WorkflowSection = () => {
           
           <motion.div
             initial="hidden"
-            animate={controls}
+            animate={isInView ? "visible" : "hidden"}
             variants={containerVariants}
             className="space-y-8 md:space-y-12 lg:space-y-16"
           >
@@ -176,7 +168,7 @@ const WorkflowSection = () => {
         
         <motion.div
           initial="hidden"
-          animate={controls}
+          animate={isInView ? "visible" : "hidden"}
           variants={itemVariants}
           className="text-center mt-12 md:mt-16"
         >
@@ -191,7 +183,7 @@ const WorkflowSection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold group shadow-lg hover:shadow-xl transition-all w-full md:w-auto"
-              onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
+              onClick={() => navigate('/systeme')}
             >
               Voir notre système en action
               <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />

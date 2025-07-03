@@ -1,15 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import AnimatedLightButton from "./AnimatedLightButton";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   const scrollToOffre = () => {
-    const offreSection = document.getElementById('offre');
-    if (offreSection) {
-      offreSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+    navigate('/systeme');
   };
 
   return (
@@ -100,7 +99,7 @@ const HeroSection = () => {
                 className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95" 
                 onClick={scrollToOffre}
               >
-                Voir l'offre
+                Voir le système en action
               </Button>
             </div>
             
