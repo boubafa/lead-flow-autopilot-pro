@@ -1,10 +1,7 @@
-
 import { ArrowRight, Play } from "lucide-react";
 import AnimatedLightButton from "./AnimatedLightButton";
-
 const SystemeSection = () => {
-  return (
-    <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+  return <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       <div className="container mx-auto max-w-6xl">
         {/* En-tête de la section */}
         <div className="text-center mb-16">
@@ -63,16 +60,9 @@ const SystemeSection = () => {
             <h4 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               Prêt à voir ce système transformer votre business ?
             </h4>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Réservez une démonstration personnalisée et découvrez comment automatiser votre prospection. 
-              Aucun engagement, résultats garantis sous 30 jours.
-            </p>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Réservez une démonstration personnalisée et découvrez comment automatiser votre prospection. </p>
             
-            <AnimatedLightButton 
-              size="lg" 
-              onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
-              className="px-8 py-4 text-xl font-semibold"
-            >
+            <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-xl font-semibold">
               <span className="flex items-center">
                 Réservez votre démonstration personnalisée
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
@@ -85,8 +75,6 @@ const SystemeSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SystemeSection;
