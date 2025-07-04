@@ -30,9 +30,7 @@ const SystemeSection = () => {
                       <p className="text-white/90 text-lg font-medium mb-2">
                         Démonstration du système
                       </p>
-                      <p className="text-white/70 text-sm">
-                        Vidéo à intégrer ici
-                      </p>
+                      <p className="text-white/70 text-sm">Vidéo à venir ici</p>
                     </div>
                   </div>
                 </div>
