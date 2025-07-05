@@ -136,10 +136,7 @@ const WorkflowSection = () => {
             <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">
               ⚡ Résultat : Zéro lead perdu, conversion maximisée
             </h3>
-            <p className="text-base md:text-lg text-gray-700 mb-6">
-              Pendant que vous dormez, notre IA travaille pour vous. Vos prospects sont pris en charge instantanément, 
-              relancés intelligemment, et convertis en clients payants.
-            </p>
+            <p className="text-base md:text-lg text-gray-700 mb-6">Pendant que vous dormez, notre IA travaille pour vous. Vos prospects sont pris en charge instantanément, relancés intelligemment, et convertis en clients p</p>
             
           </div>
         </motion.div>
