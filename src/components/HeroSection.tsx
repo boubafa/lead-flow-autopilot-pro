@@ -1,8 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target } from "lucide-react";
 import AnimatedLightButton from "./AnimatedLightButton";
-
 const HeroSection = () => {
   const scrollToSysteme = () => {
     const section = document.getElementById('systeme');
@@ -12,9 +10,7 @@ const HeroSection = () => {
       });
     }
   };
-
-  return (
-    <>
+  return <>
       <style>{`
         @keyframes float-bounce {
           0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
@@ -85,22 +81,13 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <AnimatedLightButton 
-                size="lg" 
-                onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
-                className="px-8 py-4 text-lg"
-              >
+              <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-lg">
                 <span className="flex items-center">
                   Réserver une démo gratuite
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </AnimatedLightButton>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95" 
-                onClick={scrollToSysteme}
-              >
+              <Button variant="outline" size="lg" className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95" onClick={scrollToSysteme}>
                 Voir le système en action
               </Button>
             </div>
@@ -123,7 +110,7 @@ const HeroSection = () => {
                     <div className="text-center p-4 rounded-lg bg-gradient-to-br from-blue-50 to-purple-100 transition-all duration-300 hover:scale-105 hover:shadow-md">
                       <ArrowRight className="w-8 h-8 text-blue-600 mx-auto mb-2 svg-heartbeat" />
                       <h3 className="font-semibold text-blue-800">Conversion</h3>
-                      <p className="text-sm text-blue-600">+300% de RDV qualifiés</p>
+                      <p className="text-sm text-blue-600">+200% de RDV qualifiés</p>
                     </div>
                   </div>
                 </div>
@@ -132,8 +119,6 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default HeroSection;
