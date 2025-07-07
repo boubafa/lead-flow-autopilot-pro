@@ -1,24 +1,833 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lead-flow-autopilot-pro</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Flow Autopilot Pro - Boubacar Fall</title>
+    <meta name="description" content="Système IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez">
+    <meta name="author" content="Boubacar Fall">
+    
+    <meta property="og:title" content="Lead Flow Autopilot Pro - Boubacar Fall">
+    <meta property="og:description" content="Système IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">B</div>
+                    <span class="logo-text">Boubacar Fall</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <button onclick="scrollToSection('workflow')" class="nav-link">Solution</button>
+                    <button onclick="scrollToSection('systeme')" class="nav-link">Système</button>
+                    <button onclick="scrollToSection('apropos')" class="nav-link">À propos</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="btn-primary desktop-cta" onclick="window.open('https://cal.com/boubatest/30min', '_blank')">
+                        Réserver un audit gratuit
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="logo">
+                        <div class="logo-icon">B</div>
+                        <span class="logo-text">Boubacar Fall</span>
+                    </div>
+                    <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                
+                <nav class="mobile-nav">
+                    <button onclick="scrollToSection('workflow'); toggleMobileMenu();" class="mobile-nav-link">Solution</button>
+                    <button onclick="scrollToSection('systeme'); toggleMobileMenu();" class="mobile-nav-link">Système</button>
+                    <button onclick="scrollToSection('apropos'); toggleMobileMenu();" class="mobile-nav-link">À propos</button>
+                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="mobile-nav-link">Contact</button>
+                </nav>
+                
+                <button class="btn-primary mobile-cta" onclick="window.open('https://cal.com/boubatest/30min', '_blank'); toggleMobileMenu();">
+                    Réserver un audit gratuit
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <meta property="og:title" content="lead-flow-autopilot-pro" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg class="badge-icon svg-heartbeat" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                    </svg>
+                    <span>IA + Automatisation = Résultats</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Convertissez vos leads automatiquement
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Système IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary btn-lg" onclick="window.open('https://cal.com/boubatest/30min', '_blank')">
+                        <span>
+                            Réserver une démo gratuite
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="btn-outline btn-lg" onclick="scrollToSection('systeme')">
+                        Voir le système en action
+                    </button>
+                </div>
+                
+                <div class="hero-card">
+                    <div class="hero-card-content">
+                        <div class="hero-features">
+                            <div class="hero-feature">
+                                <svg class="feature-icon svg-float-bounce" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                                <h3>Capture Auto</h3>
+                                <p>Depuis tous vos formulaires</p>
+                            </div>
+                            <div class="hero-feature">
+                                <svg class="feature-icon svg-spin-wobble" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                                </svg>
+                                <h3>IA Personnalisée</h3>
+                                <p>Messages adaptatifs</p>
+                            </div>
+                            <div class="hero-feature">
+                                <svg class="feature-icon svg-heartbeat" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12,5 19,12 12,19"></polyline>
+                                </svg>
+                                <h3>Conversion</h3>
+                                <p>+200% de RDV qualifiés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <div class="problems-header">
+                <h2>Vous perdez des clients <span class="text-red">chaque jour</span></h2>
+                <p>Sans automatisation, votre entreprise laisse s'échapper des milliers d'euros de CA</p>
+            </div>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Leads non-relancés</h3>
+                    <p>70% de vos prospects ne reçoivent jamais de suivi après leur demande initiale</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z"></path>
+                        </svg>
+                    </div>
+                    <h3>Prospects perdus</h3>
+                    <p>Vos concurrents récupèrent les clients que vous n'avez pas su convertir à temps</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12,6 12,12 16,14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Processus manuel chronophage</h3>
+                    <p>Votre équipe perd 4h/jour sur des tâches répétitives au lieu de vendre</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-content">
+                <h2>La solution complète</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Capture auto depuis formulaires</h3>
+                        <p>Intégration directe avec vos sites web et landing pages</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path>
+                            </svg>
+                        </div>
+                        <h3>Messages IA personnalisés</h3>
+                        <p>Contenu adapté selon le profil et le comportement du prospect</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Relances intelligentes (3x max)</h3>
+                        <p>Séquences optimisées pour maximiser le taux de réponse</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Notifications temps réel</h3>
+                        <p>Alertes instantanées pour les prospects chauds</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <h3>Synchronisation CRM</h3>
+                        <p>Compatible avec tous les CRM populaires</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <path d="m9 9 5 12 1.774-5.226L21 14 9 9z"></path>
+                            </svg>
+                        </div>
+                        <h3>Dashboard de suivi</h3>
+                        <p>Analytics détaillés et ROI en temps réel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow">
+        <div class="container">
+            <div class="workflow-header">
+                <h2>Je vous présente <span class="gradient-text">Lead Booster Auto Pilot</span>, la solution à ce problème. Comment ça marche ? <span class="gradient-text">En 6 étapes automatisées</span></h2>
+                <p>Notre système intelligent transforme vos visiteurs en clients qualifiés, 24h/24 et 7j/7, sans intervention manuelle</p>
+            </div>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-1">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3>Étape 1: Capture automatique</h3>
+                        <p>Vos formulaires se connectent instantanément à notre système. Chaque nouveau lead est capturé automatiquement.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Étape 2: Tri et enrichissement</h3>
+                        <p>Les leads sont automatiquement triés, qualifiés et enrichis avec les bonnes informations dans votre CRM.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-3">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path>
+                            </svg>
+                        </div>
+                        <h3>Étape 3: Messages personnalisés</h3>
+                        <p>Chaque lead reçoit instantanément un message de bienvenue personnalisé avec un lien de prise de rendez-vous.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-4">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Étape 4: Relances intelligentes</h3>
+                        <p>Si le lead ne prend pas rendez-vous, notre système envoie des relances automatiques à J+3, J+6, et J+9.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-5">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z"></path>
+                            </svg>
+                        </div>
+                        <h3>Étape 5: Notification équipe</h3>
+                        <p>Votre équipe commerciale est notifiée en temps réel des leads chauds prêts à être contactés.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-card">
+                        <div class="step-icon step-icon-6">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Étape 6: Suivi en temps réel</h3>
+                        <p>Dashboard complet pour suivre tous vos leads, leur statut et les actions automatisées effectuées.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="workflow-result">
+                <h3>⚡ Résultat : Zéro lead perdu, conversion maximisée</h3>
+                <p>Pendant que vous dormez, notre IA travaille pour vous. Vos prospects sont pris en charge instantanément, relancés intelligemment, et convertis en clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Tarifs <span class="gradient-text">transparents</span></h2>
+                <p>Choisissez l'offre qui correspond à vos besoins et votre budget</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">
+                        <span class="badge-dot green"></span>
+                    </div>
+                    <h3>STARTER</h3>
+                    <p class="pricing-description">Votre 1ère automation simple</p>
+                    <div class="pricing-price">
+                        <span class="price">390€</span>
+                        <span class="period">one-shot</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            1 message + 1 relance
+                        </li>
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Google Sheets + Notifications
+                        </li>
+                        <li class="feature-excluded">
+                            <svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Support après livraison
+                        </li>
+                    </ul>
+                    <button class="btn-pricing green">Commander maintenant</button>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Le plus populaire</div>
+                    <div class="pricing-badge">
+                        <span class="badge-dot blue"></span>
+                    </div>
+                    <h3>BUSINESS</h3>
+                    <p class="pricing-description">Automatisation complète, sans effort</p>
+                    <div class="pricing-price">
+                        <span class="price">199€</span>
+                        <span class="period">/mois</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            3 relances IA + Calendly
+                        </li>
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Support inclus + Garantie 14 jours
+                        </li>
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Dashboard avancé
+                        </li>
+                    </ul>
+                    <button class="btn-pricing blue">Essayer gratuitement</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-badge">
+                        <span class="badge-dot purple"></span>
+                    </div>
+                    <h3>PREMIUM</h3>
+                    <p class="pricing-description">Votre équipe dédiée à l'automatisation</p>
+                    <div class="pricing-price">
+                        <span class="price">299€</span>
+                        <span class="period">/mois</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            2 optimisations/mois + Reporting
+                        </li>
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Support VIP (réponse sous 2h)
+                        </li>
+                        <li class="feature-included">
+                            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Intégrations personnalisées
+                        </li>
+                    </ul>
+                    <button class="btn-pricing purple">Contactez-nous</button>
+                </div>
+            </div>
+            
+            <div class="pricing-footer">
+                <p>🚀 Garantie satisfait ou remboursé 14 jours</p>
+                <p class="pricing-note">Pas d'engagement • Résiliation à tout moment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Section -->
+    <section id="systeme" class="system">
+        <div class="container">
+            <div class="system-header">
+                <h2>Notre <span class="gradient-text">Système</span> en Action</h2>
+                <p>Découvrez comment notre IA transforme vos prospects en clients automatiquement</p>
+            </div>
+            
+            <div class="system-video">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-content">
+                            <div class="play-button" onclick="playVideo()">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21 5,3"></polygon>
+                                </svg>
+                            </div>
+                            <p class="video-title">Démonstration du système</p>
+                            <p class="video-subtitle">Vidéo à venir ici</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="system-description">
+                <h3>Générez des leads automatiquement, relancez-les sans effort et augmentez vos taux de conversion</h3>
+                <p>Notre système d'IA capture vos prospects 24h/24, les qualifie intelligemment et les convertit en rendez-vous qualifiés. Pendant que vous dormez, votre pipeline commercial se remplit automatiquement.</p>
+            </div>
+            
+            <div class="system-cta">
+                <h4>Prêt à voir ce système transformer votre business ?</h4>
+                <p>Réservez une démonstration personnalisée et découvrez comment automatiser votre prospection.</p>
+                <button class="btn-primary btn-lg" onclick="window.open('https://cal.com/boubatest/30min', '_blank')">
+                    <span>
+                        Réservez votre démonstration personnalisée
+                        <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </span>
+                </button>
+                <p class="system-guarantee">⚡ Réponse garantie sous 48h • 🎯 Sans engagement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>Ce que disent nos <span class="text-yellow">premiers utilisateurs</span></h2>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                        </div>
+                        <blockquote>"🌟 Grâce à ce système, notre taux de réponse a doublé. On ne perd plus aucun lead, tout est fluide et automatisé."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-name">— Julien M.</div>
+                            <div class="author-role">Fondateur d'une agence web</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                        </div>
+                        <blockquote>"🌟 Avant, je passais mes journées à relancer des prospects. Maintenant, je me concentre sur ce qui compte : mes clients."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-name">— Awa D.</div>
+                            <div class="author-role">Coach business</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
+                            </svg>
+                        </div>
+                        <blockquote>"🌟 Une solution propre, rapide à mettre en place, et surtout rentable dès la première semaine."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-name">— Yacine T.</div>
+                            <div class="author-role">Formateur indépendant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Questions <span class="gradient-text">fréquentes</span></h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        <span>💬 Combien de temps prend l'installation du système ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>En général entre 7 et 10 jours, selon votre organisation actuelle et vos outils.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        <span>💬 Dois-je déjà utiliser un CRM ou des formulaires ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Pas du tout. Je vous aide à tout connecter simplement, même si vous partez de zéro.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        <span>💬 Peut-on tester le système ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Oui. Une démo complète vous est présentée avant validation. Aucun engagement avant.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        <span>💬 Ce système fonctionne-t-il avec mes outils ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Je travaille avec des outils comme Tally, Typeform, Notion, Make, Zapier, Calendly, Google Sheets, etc. Il est 100 % adaptable.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        <span>💬 Comment se passe le paiement ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Après validation de votre besoin lors de l'audit gratuit, un devis vous est envoyé. Le paiement s'effectue par virement bancaire via Wise, avec 50 % d'acompte à la commande.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>À propos de moi</h2>
+                
+                <div class="about-card">
+                    <div class="about-profile">
+                        <div class="profile-avatar">B</div>
+                        <div class="profile-info">
+                            <h3>👋 Je suis Boubacar Fall</h3>
+                            <p>Passionné d'intelligence artificielle et d'automatisation</p>
+                        </div>
+                    </div>
+                    
+                    <p>J'aide les entreprises à intégrer ces technologies pour gagner du temps, ne plus perdre de clients, et optimiser leurs opérations.</p>
+                    
+                    <p>J'ai créé ce service après avoir constaté une réalité simple mais coûteuse :</p>
+                    
+                    <div class="about-problems">
+                        <div class="problem-item">
+                            <span class="problem-icon">❌</span>
+                            <span>Trop d'entreprises perdent des prospects à cause du manque de suivi.</span>
+                        </div>
+                        <div class="problem-item">
+                            <span class="problem-icon">❌</span>
+                            <span>Trop d'équipes gaspillent leurs journées sur des tâches répétitives.</span>
+                        </div>
+                    </div>
+                    
+                    <p>Ma mission est d'aider un maximum d'entreprises à <strong>intégrer l'IA dans leurs process</strong>, afin de rester compétitives dans un monde qui évolue à une vitesse fulgurante.</p>
+                    
+                    <div class="about-mission">
+                        <h4>💡 Pourquoi me faire confiance ?</h4>
+                        <p>Parce que je ne vends pas un outil. Je construis une <strong>solution sur mesure</strong> pour que <strong>chaque prospect perdu se transforme en opportunité gagnée</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2>Prêt à <span class="text-yellow">automatiser</span> votre prospection ?</h2>
+                <p>Réservez votre démo gratuite et découvrez comment transformer vos leads en clients</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ou contactez-nous directement</h3>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">fallboubacar514@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Réserver un créneau</div>
+                                <div class="contact-value">Démo gratuite de 30 minutes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-guarantee">
+                    <h4>Réponse garantie sous 48h</h4>
+                    <p>Nous vous accompagnons dans la mise en place de votre automatisation.</p>
+                    <button class="btn-primary" onclick="window.open('https://cal.com/boubatest/30min', '_blank')">
+                        Réservez votre audit gratuitement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">L</div>
+                        <span class="logo-text">Lead Booster Auto Pilot</span>
+                    </div>
+                    <p>L'automatisation intelligente pour votre prospection B2B</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solution</h4>
+                        <ul>
+                            <li><a href="#" onclick="scrollToSection('workflow')">Fonctionnalités</a></li>
+                            <li><a href="#" onclick="scrollToSection('systeme')">Intégrations</a></li>
+                            <li><a href="#" onclick="scrollToSection('apropos')">Sécurité</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#" onclick="scrollToSection('faq')">Documentation</a></li>
+                            <li><a href="#" onclick="scrollToSection('faq')">Centre d'aide</a></li>
+                            <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="#" onclick="scrollToSection('apropos')">À propos</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Carrières</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 AutoConvert Pro. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Confidentialité</a>
+                    <a href="#">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
