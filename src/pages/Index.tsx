@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Check, X, ArrowRight, Zap, Target, Clock, BarChart3, Users, MessageSquare, Mail, Calendar, Shield, Star } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import ProblemsSection from "@/components/ProblemsSection";
-import SolutionSection from "@/components/SolutionSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import OffreSection from "@/components/OffreSection";
 import SystemeSection from "@/components/SystemeSection";
@@ -23,7 +22,6 @@ const Index = () => {
       <Header />
       <HeroSection />
       <ProblemsSection />
-      <SolutionSection />
       <WorkflowSection />
       <OffreSection />
       <SystemeSection />
