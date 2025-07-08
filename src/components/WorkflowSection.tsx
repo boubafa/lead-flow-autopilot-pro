@@ -40,7 +40,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -57,7 +57,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
+        ease: "easeOut",
         delay: 0.3
       }
     }
