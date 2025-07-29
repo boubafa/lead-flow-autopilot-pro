@@ -76,9 +76,7 @@ const HeroSection = () => {
               Convertissez vos leads automatiquement
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Système IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">Agent IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-lg">
@@ -100,7 +98,7 @@ const HeroSection = () => {
                     <div className="text-center p-4 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 transition-all duration-300 hover:scale-105 hover:shadow-md">
                       <Target className="w-8 h-8 text-blue-600 mx-auto mb-2 svg-float-bounce" />
                       <h3 className="font-semibold text-blue-800">Capture Auto</h3>
-                      <p className="text-sm text-blue-600">Depuis tous vos formulaires</p>
+                      <p className="text-sm text-blue-600">Depuis whatsApp ou tous vos formulaires et réseaux sociaux</p>
                     </div>
                     <div className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 transition-all duration-300 hover:scale-105 hover:shadow-md">
                       <Zap className="w-8 h-8 text-purple-600 mx-auto mb-2 svg-spin-wobble" />
