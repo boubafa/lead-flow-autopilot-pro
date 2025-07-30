@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -39,7 +40,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -56,7 +57,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
         delay: 0.3
       }
     }
@@ -85,7 +86,7 @@ const WorkflowSection = () => {
   }, {
     icon: Users,
     title: "Notification équipe",
-    description: "Votre équipe commerciale est notifiée en temps réel des leads chauds prêts à être contactés.",
+    description: "Votre équipe commerciale est notifiée en temps réel durant le parcours du prospect en cas de non compréhension ou d'imprévu vous êtes notifié en temps réel",
     color: "from-indigo-500 to-purple-500"
   }, {
     icon: Zap,
