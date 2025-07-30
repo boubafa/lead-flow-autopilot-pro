@@ -42,13 +42,8 @@ const SystemeSection = () => {
         {/* Texte descriptif */}
         <div className="text-center mb-12">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Générez des leads automatiquement, relancez-les sans effort et augmentez vos taux de conversion
-            </h3>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Notre système d'IA capture vos prospects 24h/24, les qualifie intelligemment et les convertit en rendez-vous qualifiés. 
-              Pendant que vous dormez, votre pipeline commercial se remplit automatiquement.
-            </p>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Gérez des leads automatiquement sans effort  et augmentez vos taux de conversion</h3>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">Notre Agent IA traite vos prospects 24h/24, les qualifie intelligemment et les convertit en rendez-vous qualifiés. Pendant que vous dormez, votre pipeline commercial se remplit automatiquement.</p>
           </div>
         </div>
 
