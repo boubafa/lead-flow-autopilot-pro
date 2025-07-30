@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -5,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Zap, Target, Clock, BarChart3, Users, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
 const WorkflowSection = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ const WorkflowSection = () => {
     once: true,
     amount: 0.3
   });
+  
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -24,6 +27,7 @@ const WorkflowSection = () => {
       }
     }
   };
+  
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -36,10 +40,11 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
+  
   const iconVariants = {
     hidden: {
       scale: 0,
@@ -52,15 +57,16 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: [0.25, 0.46, 0.45, 0.94],
         delay: 0.3
       }
     }
   };
+  
   const steps = [{
     icon: Target,
     title: "Capture automatique",
-    description: "Vos formulaires se connectent instantanément à notre système. Chaque nouveau lead est capturé automatiquement.",
+    description: "Vos réseaux sociaux et formulaires se connectent instantanément à notre Agent. Chaque nouveau lead est capturé automatiquement.",
     color: "from-blue-500 to-cyan-500"
   }, {
     icon: BarChart3,
@@ -75,7 +81,7 @@ const WorkflowSection = () => {
   }, {
     icon: Clock,
     title: "Relances intelligentes",
-    description: "Si le lead ne prend pas rendez-vous, notre système envoie des relances automatiques à J+3, J+6, et J+9.",
+    description: "Si le lead ne prend pas rendez-vous, notre Agent envoie des relances automatiques à J+3, J+6, et J+9.",
     color: "from-orange-500 to-red-500"
   }, {
     icon: Users,
@@ -88,6 +94,7 @@ const WorkflowSection = () => {
     description: "Dashboard complet pour suivre tous vos leads, leur statut et les actions automatisées effectuées.",
     color: "from-yellow-500 to-orange-500"
   }];
+  
   return <section id="workflow" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
       <div className="container mx-auto" ref={ref}>
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"} variants={containerVariants} className="text-center mb-12 md:mb-16">
@@ -143,4 +150,5 @@ const WorkflowSection = () => {
       </div>
     </section>;
 };
+
 export default WorkflowSection;
