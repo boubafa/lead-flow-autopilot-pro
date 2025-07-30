@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -40,7 +39,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeOut"
       }
     }
   };
@@ -57,7 +56,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: "easeOut",
         delay: 0.3
       }
     }
@@ -76,7 +75,7 @@ const WorkflowSection = () => {
   }, {
     icon: MessageSquare,
     title: "Messages personnalisés",
-    description: "Chaque lead reçoit instantanément un message de bienvenue personnalisé avec un lien de prise de rendez-vous.",
+    description: "Chaque lead reçoit instantanément un message personnalisé en fonction de vos données avec un lien de prise de rendez-vous pendant la conversation pour boucler un call directement dans la conversation.",
     color: "from-green-500 to-emerald-500"
   }, {
     icon: Clock,
