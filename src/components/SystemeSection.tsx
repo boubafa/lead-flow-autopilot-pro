@@ -50,9 +50,7 @@ const SystemeSection = () => {
         {/* Call to Action */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto border border-blue-200 shadow-lg">
-            <h4 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-              Prêt à voir ce système transformer votre business ?
-            </h4>
+            <h4 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Prêt à voir ce agent transformer votre business ?</h4>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Réservez une démonstration personnalisée et découvrez comment automatiser votre prospection. </p>
             
             <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-xl font-semibold">
