@@ -1,4 +1,3 @@
-
 import AnimatedLightButton from "./AnimatedLightButton";
 import MobileMenu from "./MobileMenu";
 
@@ -16,8 +15,12 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-blue-100 z-50">
       <div className="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transform transition-transform duration-200 hover:scale-110 hover:rotate-6">
-            <span className="text-white font-bold text-xs md:text-sm">B</span>
+          <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center transform transition-transform duration-200 hover:scale-110 hover:rotate-6 overflow-hidden">
+            <img 
+              src="/lovable-uploads/81abc45f-d971-42b9-940c-b02b17e0d096.png" 
+              alt="Boubacar Fall" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Boubacar Fall

@@ -10,8 +10,12 @@ const AboutSection = () => {
           
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12 border border-blue-100 shadow-lg">
             <div className="flex items-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-6">
-                <span className="text-white font-bold text-2xl">B</span>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mr-6 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/81abc45f-d971-42b9-940c-b02b17e0d096.png" 
+                  alt="Boubacar Fall" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
