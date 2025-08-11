@@ -1,4 +1,6 @@
+
 import { Star } from "lucide-react";
+
 const InfiniteTestimonialCarousel = () => {
   const testimonials = [{
     text: "Grâce à ce système, notre taux de réponse a doublé. On ne perd plus aucun lead, tout est fluide et automatisé.",
@@ -16,9 +18,24 @@ const InfiniteTestimonialCarousel = () => {
 
   // Duplicate testimonials for infinite effect
   const duplicatedTestimonials = [...testimonials, ...testimonials];
-  return <div className="overflow-hidden">
+
+  return (
+    <div className="overflow-hidden">
       <div className="flex animate-scroll space-x-8">
-        {duplicatedTestimonials.map((testimonial, index) => {})}
+        {duplicatedTestimonials.map((testimonial, index) => (
+          <div key={index} className="flex-shrink-0 w-80 p-6 bg-white rounded-lg shadow-lg">
+            <div className="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+              ))}
+            </div>
+            <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+            <div>
+              <p className="font-semibold text-gray-900">{testimonial.author}</p>
+              <p className="text-sm text-gray-600">{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
       </div>
       <style>
         {`
@@ -35,6 +52,8 @@ const InfiniteTestimonialCarousel = () => {
           }
         `}
       </style>
-    </div>;
+    </div>
+  );
 };
+
 export default InfiniteTestimonialCarousel;
