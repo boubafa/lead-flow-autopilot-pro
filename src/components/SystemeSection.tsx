@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import AnimatedLightButton from "./AnimatedLightButton";
 const SystemeSection = () => {
@@ -40,11 +41,11 @@ const SystemeSection = () => {
         <div className="text-center">
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto border border-blue-200 shadow-lg">
             <h4 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Prêt à transformer votre business ?</h4>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Réservez dés maintenant un audit  et découvrez comment automatiser votre prospection.</p>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Réservez dés maintenant un audit  et découvrez comment automatiser votre prospection.</p>
             
             <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-xl font-semibold">
               <span className="flex items-center">
-                Réservez votre démonstration personnalisée
+                Réserver votre audit maintenant
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </AnimatedLightButton>
