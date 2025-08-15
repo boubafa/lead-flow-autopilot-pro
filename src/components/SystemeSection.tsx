@@ -1,8 +1,10 @@
 
 import { ArrowRight } from "lucide-react";
 import AnimatedLightButton from "./AnimatedLightButton";
+
 const SystemeSection = () => {
-  return <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+  return (
+    <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       <div className="container mx-auto max-w-6xl">
         {/* En-tête de la section */}
         <div className="text-center mb-16">
@@ -22,7 +24,7 @@ const SystemeSection = () => {
               <div className="relative">
                 {/* Vidéo YouTube */}
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/umxUDtOU2sg?si=SHhMG7UEDlLe_x8_" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="absolute inset-0 w-full h-full"></iframe>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hCSOIgJXBUY?si=bsRMX1LFFGyJ8SMQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="absolute inset-0 w-full h-full"></iframe>
                 </div>
               </div>
             </div>
@@ -54,6 +56,8 @@ const SystemeSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default SystemeSection;
