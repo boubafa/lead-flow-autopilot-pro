@@ -1,10 +1,7 @@
-
 import { ArrowRight } from "lucide-react";
 import AnimatedLightButton from "./AnimatedLightButton";
-
 const SystemeSection = () => {
-  return (
-    <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+  return <section id="systeme" className="py-20 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       <div className="container mx-auto max-w-6xl">
         {/* En-tête de la section */}
         <div className="text-center mb-16">
@@ -24,17 +21,7 @@ const SystemeSection = () => {
               <div className="relative">
                 {/* Vidéo YouTube */}
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/umxUDtOU2sg?si=SHhMG7UEDlLe_x8_" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                  ></iframe>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/umxUDtOU2sg?si=SHhMG7UEDlLe_x8_" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="absolute inset-0 w-full h-full"></iframe>
                 </div>
               </div>
             </div>
@@ -44,7 +31,7 @@ const SystemeSection = () => {
         {/* Texte descriptif */}
         <div className="text-center mb-12">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Gérez des leads automatiquement sans effort  et augmentez vos taux de conversion</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Gérez la qualification des leads et la prise de RDV automatiquement sans effort et augmentez vos taux de conversion</h3>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">Notre Agent IA traite vos prospects 24h/24, les qualifie intelligemment et les convertit en rendez-vous qualifiés. Pendant que vous dormez, votre pipeline commercial se remplit automatiquement.</p>
           </div>
         </div>
@@ -66,8 +53,6 @@ const SystemeSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SystemeSection;
