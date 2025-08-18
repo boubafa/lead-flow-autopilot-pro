@@ -76,7 +76,7 @@ const HeroSection = () => {
               Convertissez vos leads automatiquement
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">Agent IA de qualification & relance 24/7 qui transforme vos prospects en clients pendant que vous dormez</p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">Agent IA de qualification & Prise de RDV 24/7 qui transforme vos prospects en clients pendant que vous dormez</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <AnimatedLightButton size="lg" onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')} className="px-8 py-4 text-lg">
