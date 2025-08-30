@@ -23,7 +23,7 @@ const PortfolioSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -123,7 +123,12 @@ const PortfolioSection = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription 
+                    className="text-gray-600 leading-relaxed cursor-text"
+                    contentEditable={true}
+                    suppressContentEditableWarning={true}
+                    style={{ minHeight: '80px' }}
+                  >
                     {project.description}
                   </CardDescription>
 
@@ -155,18 +160,13 @@ const PortfolioSection = () => {
             Intéressé par l'un de ces systèmes ? Discutons de votre projet !
           </p>
           <button 
-            onClick={() => {
-              const section = document.getElementById('contact');
-              if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            Discuter de votre projet
+            Réserver un audit gratuit
             <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

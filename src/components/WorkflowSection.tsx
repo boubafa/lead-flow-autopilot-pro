@@ -30,7 +30,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -43,7 +43,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -56,7 +56,7 @@ const WorkflowSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: [0.6, -0.05, 0.01, 0.99],
         delay: 0.3
       }
     }
@@ -70,7 +70,7 @@ const WorkflowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -78,21 +78,33 @@ const WorkflowSection = () => {
   const steps = [
     {
       icon: Target,
-      title: "Audit et Stratégie",
-      description: "Analyse complète de votre funnel actuel et définition de la stratégie d'automatisation optimale.",
+      title: "Capture automatique",
+      description: "Les prospects et informations sont automatiquement capturés à partir de WhatsApp ou tous vos formulaires et réseaux sociaux.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Zap,
-      title: "Mise en Place",
-      description: "Configuration des systèmes d'IA, création des workflows et intégration avec vos outils existants.",
+      title: "IA et enrichissement",
+      description: "Les leads sont automatiquement triés, qualifiés et priorisés avec les informations complémentaires pour une connaissance approfondie.",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: BarChart3,
-      title: "Optimisation Continue",
-      description: "Suivi des performances, ajustements en temps réel et amélioration continue des conversions.",
+      title: "Messages personnalisés",
+      description: "Chaque lead reçoit un message adaptatif personnalisé en fonction de son profil automatiquement pendant la conversation.",
       color: "from-green-500 to-green-600"
+    },
+    {
+      icon: CheckCircle,
+      title: "Notification équipe",
+      description: "Le lead est prêt par notification, vous, votre équipe ou votre rendez automatique avec l'IA, l'IA est là.",
+      color: "from-orange-500 to-orange-600"
+    },
+    {
+      icon: Target,
+      title: "Suivi en temps réel",
+      description: "Tout est suivi automatiquement et toutes les informations récoltées sont enregistrées dans le CRM.",
+      color: "from-pink-500 to-pink-600"
     }
   ];
 
@@ -115,20 +127,21 @@ const WorkflowSection = () => {
         >
           <motion.div variants={itemVariants}>
             <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4">
-              Notre Méthodologie
+              Lead Booster Auto Pilot
             </span>
           </motion.div>
           <motion.h2 
             variants={itemVariants}
             className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6"
           >
-            Comment nous transformons votre business
+            En 6 étapes automatisées
           </motion.h2>
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Une approche structurée en 3 étapes pour automatiser intelligemment votre acquisition client et multiplier vos résultats.
+            Notre système intelligent transforme vos prospects en clients qualifiés. 24h/24 et 
+            7j/7 sans intervention manuelle.
           </motion.p>
         </motion.div>
 
@@ -137,34 +150,41 @@ const WorkflowSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8 md:gap-4 items-center mb-16"
+          className="max-w-4xl mx-auto"
         >
           {steps.map((step, index) => (
-            <div key={index} className="flex items-center">
-              <motion.div
-                variants={stepVariants}
-                className="relative"
-              >
-                <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg mx-auto mb-6`}>
+            <motion.div
+              key={index}
+              variants={stepVariants}
+              className="flex items-center mb-12 last:mb-0"
+            >
+              <div className="flex-shrink-0">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
                   <motion.div variants={iconVariants}>
-                    <step.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                    <step.icon className="w-8 h-8 text-white" />
                   </motion.div>
                 </div>
-                <div className="text-center">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">{step.description}</p>
-                </div>
-              </motion.div>
+              </div>
+              
+              <div className="ml-6 flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Étape {index + 1}: {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
               
               {index < steps.length - 1 && (
                 <motion.div
                   variants={arrowVariants}
-                  className="hidden md:flex items-center justify-center mx-4"
+                  className="absolute left-8 mt-16"
+                  style={{ top: `${(index + 1) * 96 + 32}px` }}
                 >
-                  <ArrowRight className="w-8 h-8 text-gray-400" />
+                  <div className="w-0.5 h-8 bg-gray-300"></div>
                 </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -173,7 +193,7 @@ const WorkflowSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={itemVariants}
-          className="text-center"
+          className="text-center mt-16"
         >
           <button 
             onClick={() => scrollToSection('systeme')}
