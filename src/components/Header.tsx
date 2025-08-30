@@ -1,3 +1,4 @@
+
 import AnimatedLightButton from "./AnimatedLightButton";
 import MobileMenu from "./MobileMenu";
 
@@ -40,6 +41,12 @@ const Header = () => {
             className="text-gray-600 hover:text-blue-600 transition-all duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
           >
             Système
+          </button>
+          <button 
+            onClick={() => scrollToSection('portfolio')} 
+            className="text-gray-600 hover:text-blue-600 transition-all duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Portfolio
           </button>
           <button 
             onClick={() => scrollToSection('apropos')} 

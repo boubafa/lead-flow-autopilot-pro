@@ -1,8 +1,8 @@
 
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import AnimatedLightButton from './AnimatedLightButton';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedLightButton from "./AnimatedLightButton";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,63 +18,85 @@ const MobileMenu = () => {
   };
 
   const menuItems = [
-    { id: 'workflow', label: 'Solution' },
-    { id: 'systeme', label: 'Système' },
-    { id: 'apropos', label: 'À propos' },
-    { id: 'contact', label: 'Contact' }
+    { label: "Solution", id: "workflow" },
+    { label: "Système", id: "systeme" },
+    { label: "Portfolio", id: "portfolio" },
+    { label: "À propos", id: "apropos" },
+    { label: "Contact", id: "contact" }
   ];
 
   return (
-    <div className="md:hidden">
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <button 
-            className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
-            aria-label="Menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-        </SheetTrigger>
-        <SheetContent side="right" className="w-80 px-6 py-8">
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">B</span>
+    <>
+      <button 
+        className="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+
+            {/* Menu */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 md:hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Menu
+                  </span>
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
                 </div>
-                <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Boubacar Fall
-                </span>
+
+                <nav className="space-y-6">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="block w-full text-left text-lg text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+
+                <div className="mt-8">
+                  <AnimatedLightButton 
+                    onClick={() => {
+                      window.open('https://cal.com/boubatest/30min', '_blank');
+                      setIsOpen(false);
+                    }}
+                    className="w-full text-center"
+                  >
+                    Réserver un audit gratuit
+                  </AnimatedLightButton>
+                </div>
               </div>
-            </div>
-            
-            <nav className="flex flex-col space-y-6 flex-1">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-left text-lg text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-            
-            <div className="mt-8">
-              <AnimatedLightButton 
-                onClick={() => {
-                  window.open('https://cal.com/boubatest/30min', '_blank');
-                  setIsOpen(false);
-                }} 
-                className="w-full justify-center"
-              >
-                Réserver un audit gratuit
-              </AnimatedLightButton>
-            </div>
-          </div>
-        </SheetContent>
-      </Sheet>
-    </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
