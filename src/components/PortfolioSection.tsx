@@ -23,7 +23,7 @@ const PortfolioSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -35,7 +35,6 @@ const PortfolioSection = () => {
       icon: Mic,
       tags: ["IA Conversationnelle", "Automatisation", "Vocal"],
       gradient: "from-blue-500 to-cyan-500",
-      // Placeholder pour l'image que vous fournirez
       image: "/placeholder-vocal-ai.jpg"
     },
     {
@@ -44,7 +43,6 @@ const PortfolioSection = () => {
       icon: Youtube,
       tags: ["YouTube", "Stratégie", "Optimisation"],
       gradient: "from-red-500 to-pink-500",
-      // Placeholder pour l'image que vous fournirez
       image: "/placeholder-youtube-ai.jpg"
     },
     {
@@ -53,7 +51,6 @@ const PortfolioSection = () => {
       icon: Zap,
       tags: ["Commercial", "Automatisation", "Lead Gen"],
       gradient: "from-purple-500 to-indigo-500",
-      // Placeholder pour l'image que vous fournirez
       image: "/placeholder-setter-ai.jpg"
     }
   ];
@@ -110,7 +107,6 @@ const PortfolioSection = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <project.icon className="w-16 h-16 text-white" />
                   </div>
-                  {/* Placeholder pour votre image */}
                   <div className="absolute bottom-2 right-2 text-xs text-white/80 bg-black/20 px-2 py-1 rounded">
                     Image à venir
                   </div>
@@ -155,12 +151,7 @@ const PortfolioSection = () => {
             Intéressé par l'un de ces systèmes ? Discutons de votre projet !
           </p>
           <button 
-            onClick={() => {
-              const section = document.getElementById('contact');
-              if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={() => window.open('https://cal.com/boubatest/30min', '_blank')}
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             Discuter de votre projet
